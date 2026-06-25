@@ -7,7 +7,7 @@
             xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
         mc:Ignorable="d"
-        Title="Racun" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Background="LightYellow">
+        Title="Racun11" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Background="LightYellow">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
