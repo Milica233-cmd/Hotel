@@ -1,0 +1,71 @@
+﻿<Window x:Class="Hotel.Uvid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel"
+        mc:Ignorable="d"
+        Title="Uvid" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Background="LightYellow">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="10">
+
+            
+            <TextBlock Text="Šifra" Margin="0,10,0,0"/>
+            <TextBox Name="txtSifra" Height="25" Margin="0,5,0,10"/>
+
+
+            <TextBlock Text="Soba" Margin="0,10,0,0"/>
+            <ComboBox Name="cbSoba" Height="25" Margin="0,5,0,10" SelectionChanged="cbSoba_SelectionChanged"/>
+
+
+            <Button Name="btnUnesi"
+                Content="Unesi"
+                Margin="0,5"
+                Height="30"
+                Background="LightBlue"
+                Click="btnUnesi_Click"/>
+
+            <Button Name="btnIzmeni"
+                Content="Izmeni"
+                Margin="0,5"
+                Height="30"
+                Background="LightPink"
+                Click="btnIzmeni_Click"/>
+
+            <Button Name="btnObrisi"
+                Content="Obriši"
+                Margin="0,5"
+                Height="30"
+                Background="LightGray"
+                Click="btnObrisi_Click"/>
+
+            <Button Name="btnOdustani"
+                Content="Odustani"
+                Margin="0,5"
+                Height="30"
+                Background="LightCyan"
+                Click="btnOdustani_Click"/>
+
+            <Button Name="btnIzlaz"
+                Content="Izlaz"
+                Margin="0,5"
+                Height="30"
+                Background="AliceBlue"
+                Click="btnIzlaz_Click"/>
+
+        </StackPanel>
+
+
+        <TreeView Grid.Column="1"
+              Name="tvUvid"
+              Margin="10"></TreeView>
+        
+    </Grid>
+</Window>

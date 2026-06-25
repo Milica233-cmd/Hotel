@@ -1,0 +1,70 @@
+﻿<Window x:Class="Hotel.Rezervacija"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel"
+                    xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+       xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        mc:Ignorable="d"
+        Title="Rezervacija" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Background="LightYellow">
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Label Background="LightYellow" Grid.Column="0" Grid.Row="0" Name="lblGost" Margin="0" TextBlock.TextAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBlock TextWrapping="WrapWithOverflow"  VerticalAlignment="Center" Margin="5,9,17,0"  Grid.Column="0" Grid.Row="0" Height="26" Text="        Gost"/>
+        <ComboBox Grid.Column="0" Grid.Row="1" Name="cboGost" Margin="20,0,20,10"  DisplayMemberPath="Gost" SelectedValuePath="ID"
+                        VerticalContentAlignment="Center" SelectionChanged="cboGost_SelectionChanged"></ComboBox>
+
+        <Label Background="LightYellow" Grid.Column="1" Grid.Row="0" Name="lblSoba" Margin="0" TextBlock.TextAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBlock TextWrapping="WrapWithOverflow"  HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="5,9,18,0"  Grid.Column="1" Grid.Row="0" Height="26" Width="76" Text="        Soba"/>
+        <ComboBox Grid.Column="1" Grid.Row="1" Name="cboSoba" Margin="20,0,20,10"  DisplayMemberPath="BrojSobe" SelectedValuePath="ID"
+                        VerticalContentAlignment="Center" SelectionChanged="cboSoba_SelectionChanged"></ComboBox>
+
+        <Label Background="LightYellow" Grid.Column="2" Grid.Row="0"  Name="lblDatumOd" Margin="0" TextBlock.TextAlignment="Center"  HorizontalContentAlignment="Center" />
+        <TextBlock TextWrapping="WrapWithOverflow"  HorizontalAlignment="Center"  VerticalAlignment="Top"  Grid.Column="2" Grid.Row="0" Height="25" Width="99" Text="        Datum Od" Margin="0,10,0,0"/>
+        <DatePicker Grid.Row="0" Grid.Column="3" VerticalContentAlignment="Center" Name="dtpDatumOd" Margin="5" Grid.ColumnSpan="2"/>
+
+        <Label Background="LightYellow" Grid.Column="2" Grid.Row="1"  Name="lblDatumDo" Margin="0" TextBlock.TextAlignment="Center"  HorizontalContentAlignment="Center" />
+        <TextBlock TextWrapping="WrapWithOverflow"  HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="0,10,10,59"  Grid.Column="2" Grid.Row="1" Height="26" Width="89" Grid.RowSpan="2" Text="        Datum Do"/>
+        <DatePicker Grid.Row="1" Grid.Column="3" VerticalContentAlignment="Center" Name="dtpDatumDo" Margin="5" Grid.ColumnSpan="2"/>
+
+        <Button Grid.Column="0" Grid.Row="2" Name="btnUnesi" Content="Unesi" Click="btnUnesi_Click" Background="LightBlue" Margin="20,30,13,0"></Button>
+        <Button Grid.Column="1" Grid.Row="2" Name="btnIzmeni" Content="Izmeni" Click="btnIzmeni_Click" Background="LightPink" Margin="23,30,10,0"></Button>
+        <Button Grid.Column="2" Grid.Row="2" Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" Background="LightCyan" Margin="23,30,10,0"></Button>
+        <Button Grid.Column="3" Grid.Row="2" Name="btnIzlaz" Content="Izlaz" Click="btnIzlaz_Click" Background="AliceBlue" Margin="23,30,10,0"></Button>
+        <Button Grid.Column="4" Grid.Row="2" Name="btnObrisi" Content="Obrisi" Click="btnObrisi_Click" Background="LightGray" Margin="23,30,10,0"></Button>
+        <Button Grid.Column="5" Grid.Row="2" Name="btnIzvestaj" Content="Izvestaj" Click="btnIzvestaj_Click" Background="LightSkyBlue" Margin="23,30,10,0"></Button>
+        <Button Grid.Column="6" Grid.Row="2" Name="btnQRkod" Content="QR kod" Click="btnQRkod_Click" Background="BurlyWood" Margin="23,30,10,0"></Button>
+        <Image x:Name="imgQrKod" Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="2" Margin="10,10"></Image>
+
+        <DataGrid Grid.Row="3" Grid.ColumnSpan="6" Margin="5" Name="dgRezervacija" SelectionChanged="dgRezervacija_SelectionChanged" AutoGeneratedColumns="dgRezervacija_AutoGeneratedColumns" IsReadOnly="True" SelectionMode="Extended"
+          SelectionUnit="FullRow"></DataGrid>
+
+        <WindowsFormsHost Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="8">
+            <rv:ReportViewer x:Name="reportViewer"/>
+        </WindowsFormsHost>
+
+
+
+    </Grid>
+</Window>
